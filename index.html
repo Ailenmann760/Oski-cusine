@@ -1,1 +1,127 @@
-s
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oski Cuisine - Delicious Homemade Meals, Delivered</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#home" class="logo">
+            <img src="websitelogo.png" alt="Oski Cuisine Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero-section section-hidden">
+        <div class="hero-content">
+            <h1>Delicious Homemade Meals, Delivered to Your Doorstep</h1>
+            <div class="hero-buttons">
+                <a href="#order" class="btn primary-btn">Order Now</a>
+                <a href="#menu" class="btn secondary-btn">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section section-hidden">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>At Oski Cuisine, we believe in the simple joy of a home-cooked meal. We’re a team of passionate chefs dedicated to bringing fresh, high-quality, and delicious food directly from our kitchen to your table. Every dish is crafted with love and the finest ingredients, ensuring you get a taste of home, no matter where you are. We're committed to freshness, quality, and prompt home delivery to make your life easier and tastier.</p>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section section-hidden">
+        <div class="container">
+            <h2>Our Signature Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="meal1.jpg" alt="Pasta Bolognese">
+                    <div class="item-info">
+                        <h3>Pasta Bolognese</h3>
+                        <p>Rich and savory beef sauce over perfectly cooked pasta.</p>
+                        <span class="price">$15.00</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="meal2.jpg" alt="Grilled Salmon">
+                    <div class="item-info">
+                        <h3>Grilled Salmon</h3>
+                        <p>Tender salmon fillet with roasted vegetables and a lemon-dill sauce.</p>
+                        <span class="price">$22.00</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="meal3.jpg" alt="Chicken Curry">
+                    <div class="item-info">
+                        <h3>Chicken Curry</h3>
+                        <p>Creamy and flavorful chicken curry served with fluffy basmati rice.</p>
+                        <span class="price">$18.00</span>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-section section-hidden">
+        <div class="container">
+            <h2>How to Order & Get Delivery</h2>
+            <p>Ordering from Oski Cuisine is quick and easy! Simply browse our menu, add your favorite meals to your cart, and check out. Our team will prepare your fresh food and dispatch it for a fast, hassle-free delivery right to your door. Get ready to enjoy a delicious meal without leaving your home!</p>
+            <a href="#menu" class="btn primary-btn">Order Now</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section section-hidden">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <form action="send_email.php" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; 2025 Oski Cuisine. All Rights Reserved.</p>
+                <div class="contact-info">
+                    <span><a href="tel:+1234567890">📞 (123) 456-7890</a></span>
+                    <span><a href="mailto:contact@oskicuisine.com">📧 contact@oskicuisine.com</a></span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
