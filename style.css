@@ -25,6 +25,7 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.6;
+    overflow-x: hidden; /* This is a key fix to prevent horizontal scrolling */
 }
 
 .container {
@@ -100,7 +101,7 @@ h2 {
 }
 
 .navbar .main-nav {
-    display: block; /* By default, show on desktop */
+    display: block;
 }
 
 .navbar ul {
@@ -121,7 +122,7 @@ h2 {
 }
 
 .menu-toggle {
-    display: none; /* Hide on desktop */
+    display: none;
     background: none;
     border: none;
     font-size: 1.5rem;
@@ -136,10 +137,10 @@ h2 {
     }
 
     .navbar .main-nav {
-        display: none; /* Hide on mobile */
+        display: none;
         width: 100%;
         position: absolute;
-        top: 70px; /* Adjust based on navbar height */
+        top: 70px;
         left: 0;
         background-color: rgba(255, 255, 255, 0.95);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -149,7 +150,7 @@ h2 {
     }
     
     .navbar .main-nav.active {
-        display: flex; /* Show when active */
+        display: flex;
         animation: slideInDown 0.5s ease-in-out;
     }
 
@@ -167,10 +168,9 @@ h2 {
     }
 
     .menu-toggle {
-        display: block; /* Show on mobile */
+        display: block;
     }
 }
-
 
 /* Sections */
 section {
@@ -195,19 +195,20 @@ section {
     color: white;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Clip the overlay if needed */
+    overflow: hidden;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1; /* Ensure content is above the overlay */
+    z-index: 1;
+    padding: 0 20px; /* Add padding to prevent content from touching the edges */
 }
 
 .hero-title {
     margin-bottom: 1.5rem;
-    white-space: nowrap; /* Prevent wrapping for the animation */
-    overflow: hidden;
     font-size: 48px; /* Desktop */
+    word-wrap: break-word; /* Allow long words to break and wrap */
+    overflow-wrap: break-word; /* Modern version of the above */
 }
 
 .hero-tagline {
@@ -235,7 +236,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Subtle overlay for better text readability */
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive Hero Text */
@@ -403,4 +404,14 @@ footer .container {
 
 .social-links a:hover {
     color: var(--primary-color);
+}
+
+/* New: Animation for mobile menu */
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
