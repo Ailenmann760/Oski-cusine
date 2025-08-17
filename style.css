@@ -99,6 +99,10 @@ h2 {
     height: 40px;
 }
 
+.navbar .main-nav {
+    display: block; /* By default, show on desktop */
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
@@ -115,6 +119,58 @@ h2 {
 .navbar ul li a:hover {
     color: var(--primary-color);
 }
+
+.menu-toggle {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Responsive Navbar (Mobile-First) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar .main-nav {
+        display: none; /* Hide on mobile */
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar .main-nav.active {
+        display: flex; /* Show when active */
+        animation: slideInDown 0.5s ease-in-out;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul li a {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Show on mobile */
+    }
+}
+
 
 /* Sections */
 section {
@@ -148,10 +204,15 @@ section {
 }
 
 .hero-title {
-    font-size: 2.5rem; /* Reduced font size */
     margin-bottom: 1.5rem;
     white-space: nowrap; /* Prevent wrapping for the animation */
     overflow: hidden;
+    font-size: 48px; /* Desktop */
+}
+
+.hero-tagline {
+    font-size: 18px; /* Desktop */
+    margin-bottom: 2rem;
 }
 
 .flash {
@@ -175,6 +236,32 @@ section {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3); /* Subtle overlay for better text readability */
+}
+
+/* Responsive Hero Text */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 32px; /* Tablet */
+    }
+    .hero-tagline {
+        font-size: 16px; /* Tablet */
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 24px; /* Mobile */
+    }
+    .hero-tagline {
+        font-size: 14px; /* Mobile */
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .hero-buttons .btn {
+        width: 80%;
+        margin-bottom: 10px;
+    }
 }
 
 /* Menu Section */
