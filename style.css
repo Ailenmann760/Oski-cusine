@@ -39,10 +39,68 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-h2 {
-    font-size: 2.5rem;
+/* Reduced spacing between sections */
+section {
+    padding: 50px 0; /* Reduced from 100px */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Unique and animated headings */
+.section-heading-container {
     text-align: center;
     margin-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-heading {
+    font-family: 'Playfair Display', serif; /* New, more elegant font */
+    font-size: 2.5rem; /* Reduced size */
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    animation: slideIn 1s forwards cubic-bezier(0.1, 0.7, 1.0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.section-heading span {
+    display: inline-block;
+    animation: fade-in 1.5s forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/heropage-background.png') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Buttons */
@@ -171,19 +229,7 @@ h2 {
     }
 }
 
-section {
-    padding: 100px 0;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease, transform 1s ease;
-}
 
-.section-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Hero Section */
 #hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/heropage-background.png') no-repeat center center/cover;
@@ -383,8 +429,10 @@ section {
 footer {
     background-color: #333;
     color: white;
-    padding: 50px 0;
+    padding: 30px 0; /* Reduced padding for a sleeker look */
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 footer .container {
@@ -392,14 +440,17 @@ footer .container {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-info {
     text-align: left;
+    margin-bottom: 10px;
 }
 
 .footer-info p {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .contact-info span a {
@@ -413,17 +464,42 @@ footer .container {
     color: var(--primary-color);
 }
 
+.social-links {
+    margin-top: 10px;
+}
+
 .social-links a {
     margin-left: 15px;
     color: white;
     font-size: 1.5rem;
     text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
     color: var(--primary-color);
+    transform: scale(1.1);
+}
+/* This is a new class for an animated background effect in the footer */
+.footer-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(230, 92, 0, 0.2), rgba(255, 51, 0, 0.2));
+    animation: glow 5s infinite ease-in-out;
+    z-index: 0;
 }
 
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
 @keyframes slideInDown {
     0% {
         transform: translateY(-100%);
