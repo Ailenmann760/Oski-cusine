@@ -34,14 +34,28 @@ body {
     padding: 0 20px;
 }
 
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+/* Updated Heading Fonts and Spacing */
+.section-heading {
+    font-family: 'Lato', sans-serif; /* Matched to the screenshot font */
     font-weight: 700;
+    font-size: 28px; /* Matched to the screenshot font size */
+    text-align: center;
+    margin-bottom: 10px; /* Reduced spacing */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.section-text {
+    font-family: 'Lato', sans-serif; /* Matched to the screenshot font */
+    font-size: 14px; /* Matched to the screenshot font size */
+    text-align: center;
+    margin-bottom: 30px; /* Spacing below the text */
 }
 
 /* Reduced spacing between sections */
 section {
-    padding: 50px 0; /* Reduced from 100px */
+    padding: 50px 0; /* Reduced padding from 100px */
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
@@ -50,44 +64,6 @@ section {
 .section-visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Unique and animated headings */
-.section-heading-container {
-    text-align: center;
-    margin-bottom: 2rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.section-heading {
-    font-family: 'Playfair Display', serif; /* New, more elegant font */
-    font-size: 2.5rem; /* Reduced size */
-    color: var(--primary-color);
-    letter-spacing: 2px;
-    animation: slideIn 1s forwards cubic-bezier(0.1, 0.7, 1.0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.section-heading span {
-    display: inline-block;
-    animation: fade-in 1.5s forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-}
-
-@keyframes slideIn {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in {
-    to {
-        opacity: 1;
-    }
 }
 
 /* Hero Section */
@@ -228,7 +204,6 @@ section {
         display: block;
     }
 }
-
 
 #hero {
     height: 100vh;
@@ -429,7 +404,7 @@ section {
 footer {
     background-color: #333;
     color: white;
-    padding: 30px 0; /* Reduced padding for a sleeker look */
+    padding: 30px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -480,7 +455,7 @@ footer .container {
     color: var(--primary-color);
     transform: scale(1.1);
 }
-/* This is a new class for an animated background effect in the footer */
+
 .footer-animation {
     position: absolute;
     top: 0;
@@ -500,6 +475,7 @@ footer .container {
         opacity: 0.5;
     }
 }
+
 @keyframes slideInDown {
     0% {
         transform: translateY(-100%);
