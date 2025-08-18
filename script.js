@@ -38,4 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Menu carousel fade animation
+    const menuCarousel = document.querySelector('.menu-carousel');
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    const carouselObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+            } else {
+                entry.target.style.opacity = '0.5';
+            }
+        });
+    }, {
+        root: menuCarousel,
+        rootMargin: '0px',
+        threshold: 0.8
+    });
+
+    menuItems.forEach(item => {
+        carouselObserver.observe(item);
+    });
 });
