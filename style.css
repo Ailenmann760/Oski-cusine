@@ -46,16 +46,18 @@ body {
     color: var(--text-color);
 }
 
+/* Updated Text Alignment and Width */
 .section-text {
-    font-family: 'Lato', sans-serif; /* Matched to the screenshot font */
-    font-size: 14px; /* Matched to the screenshot font size */
-    text-align: center;
-    margin-bottom: 30px; /* Spacing below the text */
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    text-align: left; /* Changed from center to left */
+    max-width: 700px; /* Max width to prevent stretching */
+    margin: 0 auto 30px auto; /* Centered with top/bottom margin */
 }
 
 /* Reduced spacing between sections */
 section {
-    padding: 50px 0; /* Reduced padding from 100px */
+    padding: 50px 0;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
@@ -365,7 +367,7 @@ section {
 }
 
 .contact-form {
-    max-width: 600px;
+    max-width: 500px; /* Reduced max-width for a smaller form */
     margin: 0 auto;
     background: var(--card-bg);
     padding: 30px;
@@ -374,19 +376,20 @@ section {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced spacing between form elements */
 }
 
 .form-group label {
     display: block;
     font-weight: 600;
-    margin-bottom: 8px;
+    font-size: 14px; /* Reduced font size */
+    margin-bottom: 5px; /* Reduced margin */
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 12px;
+    padding: 10px; /* Reduced padding for smaller boxes */
     border: 1px solid #ddd;
     border-radius: 8px;
     font-family: 'Poppins', sans-serif;
